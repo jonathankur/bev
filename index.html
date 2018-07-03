@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+	<title>Windsor Mail</title>
+ <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<style type="text/css">
+.jobd {
+background-color:lightskyblue; width:95%; padding:2px 10px 2px 10px;
+}
+</style>
+	<script src="phonegap.js"></script>
+      <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="jquery.mobile-1.4.5.min.js"></script>
+	<script>
+
+
+var base_1 = "http://theparcelpeople.com.au/wholesale/";
+
+
+function golpo(x)
+{
+  var url='http://theparcelpeople.com.au/wholesale/getnames.php?start='+x+'&rnd='+Math.random();
+   $.ajax({url: url, 
+    success : function(result) {
+                $("#mylist").html(result);
+                $("#mylist").trigger('create');
+                jQuery.mobile.changePage("#listpage", {transition: "flip"});                     
+   
+    }
+  });
+}
+
+
+function getinfo(x)
+{
+  var url='http://theparcelpeople.com.au/wholesale/getinfo.php?id='+x+'&rnd='+Math.random();
+   $.ajax({url: url, 
+    success : function(result) {
+                $("#mylist").html(result);
+                $("#mylist").trigger('create');
+    }
+  });
+}
+
+
+</script>
+</head>
+<body>
+
+<div data-role="page" id="intropage" >
+  <div data-role="header" data-theme="a" >
+    <h3 name="nam" id="nam">Buying Group</h3>
+  </div>
+  <div role="main" class="ui-content">
+  
+ <fieldset class="ui-grid-c">
+  <div class="ui-block-a"><input type="button" value="A" onclick="golpo('A');"></div>
+  <div class="ui-block-b"><input type="button" value="B" onclick="golpo('B');"></div>
+  <div class="ui-block-c"><input type="button" value="C" onclick="golpo('C');"></div>
+  <div class="ui-block-d"><input type="button" value="D" onclick="golpo('D');"></div>
+ </fieldset>
+
+ <fieldset class="ui-grid-c">
+  <div class="ui-block-a"><input type="button" value="E" onclick="golpo('E');"></div>
+  <div class="ui-block-b"><input type="button" value="F" onclick="golpo('F');"></div>
+  <div class="ui-block-c"><input type="button" value="G" onclick="golpo('G');"></div>
+  <div class="ui-block-d"><input type="button" value="H" onclick="golpo('H');"></div>
+ </fieldset>
+
+ <fieldset class="ui-grid-c">
+  <div class="ui-block-a"><input type="button" value="I" onclick="golpo('I');"></div>
+  <div class="ui-block-b"><input type="button" value="J" onclick="golpo('J');"></div>
+  <div class="ui-block-c"><input type="button" value="K" onclick="golpo('K');"></div>
+  <div class="ui-block-d"><input type="button" value="L" onclick="golpo('L');"></div>
+ </fieldset>
+
+ <fieldset class="ui-grid-c">
+  <div class="ui-block-a"><input type="button" value="M" onclick="golpo('M');"></div>
+  <div class="ui-block-b"><input type="button" value="N" onclick="golpo('N');"></div>
+  <div class="ui-block-c"><input type="button" value="O" onclick="golpo('O');"></div>
+  <div class="ui-block-d"><input type="button" value="P" onclick="golpo('P');"></div>
+ </fieldset>
+
+ <fieldset class="ui-grid-c">
+  <div class="ui-block-a"><input type="button" value="Q" onclick="golpo('Q');"></div>
+  <div class="ui-block-b"><input type="button" value="R" onclick="golpo('R');"></div>
+  <div class="ui-block-c"><input type="button" value="S" onclick="golpo('S');"></div>
+  <div class="ui-block-d"><input type="button" value="T" onclick="golpo('T');"></div>
+ </fieldset>
+
+ <fieldset class="ui-grid-c">
+  <div class="ui-block-a"><input type="button" value="U" onclick="golpo('U');"></div>
+  <div class="ui-block-b"><input type="button" value="V" onclick="golpo('V');"></div>
+  <div class="ui-block-c"><input type="button" value="W" onclick="golpo('W');"></div>
+  <div class="ui-block-d"><input type="button" value="X" onclick="golpo('X');"></div>
+ </fieldset>
+
+ <fieldset class="ui-grid-c">
+  <div class="ui-block-a"><input type="button" value="Y" onclick="golpo('Y');"></div>
+  <div class="ui-block-b"><input type="button" value="Z" onclick="golpo('Z');"></div>
+  <div class="ui-block-c"><input type="button" value=" "></div>
+  <div class="ui-block-d"><input type="button" value=" "></div>
+ </fieldset>
+
+
+
+
+</div>
+</div>
+
+<div data-role="page" id="listpage" >
+<div data-role="header" data-position="fixed">
+<div style="float:left" id="custom-border-radius"><a href="#intropage" data-role="button" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">Back</a></div>
+<h3 name="p2head" id="p2head"> </h3>
+ </div>
+<div role="main" class="ui-content">
+<center>
+ <div data-inset="true" name="mylist" id="mylist">
+ </div>
+</center>
+</div>
+</div>
+
+</body>
+</html>
